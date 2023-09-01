@@ -78,7 +78,7 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
     }
 
     override fun onLoadResource(view: WebView?, url: String?) {
-        Log.d(TAG, "onLoadResource: $view")
+//        Log.d(TAG, "onLoadResource: $view")
         view?.loadUrl("javascript:window.HtmlViewer.extractedHtml('<html>'+document.getElementsByTagName('html')[0].innerHTML+'</html>');");
         super.onLoadResource(view, url)
     }
@@ -87,11 +87,11 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
         @JavascriptInterface
         fun extractedHtml(html: String?) {
             html?.let {
-                Log.d(TAG, "extractedHtml: Called")
+//                Log.d(TAG, "extractedHtml: Called")
                 val jsoup = Jsoup.parse(html)
                 val element = jsoup.getElementsByClass("ryNqvb")
                 if (element.text().isNotBlank()) {
-                    Log.d(TAG, "extractedHtml: Found")
+//                    Log.d(TAG, "extractedHtml: Found")
                     if (!checked) {
                         checked = true
                         cancelHandler()
