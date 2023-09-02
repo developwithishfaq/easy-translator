@@ -17,7 +17,6 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
     private var mainWebView: WebView? = null
     private var checked = false
     private var text = ""
-    private var className = "ryNqvb"
 
     private var mOnSuccessListener: ((String) -> Unit)? = null
     private var mOnErrorListener: ((String) -> Unit)? = null
@@ -38,7 +37,6 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
         onError: (String) -> Unit,
         timeout: Long = 30000
     ) {
-        this.className = className
 
         mOnSuccessListener = onSuccess
         mOnErrorListener = onError
