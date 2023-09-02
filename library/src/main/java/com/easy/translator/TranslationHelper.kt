@@ -4,7 +4,6 @@ import android.annotation.SuppressLint
 import android.content.Context
 import android.os.Handler
 import android.os.Looper
-import android.util.Log
 import android.webkit.JavascriptInterface
 import android.webkit.WebSettings
 import android.webkit.WebView
@@ -12,8 +11,7 @@ import android.webkit.WebViewClient
 import org.jsoup.Jsoup
 
 
-open class TranslationHelper(private var mContext: Context) : WebViewClient() {
-    private val TAG: String = "cvv"
+open class TranslationHelper  constructor(private var mContext: Context) : WebViewClient() {
     private var mainWebView: WebView? = null
     private var checked = false
     private var text = ""
@@ -22,6 +20,7 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
     private var mOnErrorListener: ((String) -> Unit)? = null
 
     private val handler = Handler(Looper.getMainLooper())
+
 
     override fun onPageFinished(view: WebView?, url: String?) {
         super.onPageFinished(view, url)
@@ -33,9 +32,9 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
         text: String,
         from: String,
         to: String,
-        onSuccess: (String) -> Unit,
-        onError: (String) -> Unit,
-        timeout: Long = 30000
+        onSuccess: ((String) -> Unit)? = null,
+        onError: ((String) -> Unit)? = null,
+        timeout: Long = 20000
     ) {
 
         mOnSuccessListener = onSuccess
@@ -59,8 +58,7 @@ open class TranslationHelper(private var mContext: Context) : WebViewClient() {
                 mixedContentMode = 0
             }
             mainWebView!!.addJavascriptInterface(
-                JavaScriptInjector(),
-                "HtmlViewer"
+                JavaScriptInjector(), "HtmlViewer"
             )
             mainWebView!!.webViewClient = this
             val link =
