@@ -1,4 +1,4 @@
-# Easy FCM
+# Easy Translator
 
 Easy FCM is a powerful and user-friendly library designed to streamline the process of integrating Firebase Cloud Messaging (FCM) into your projects, enabling developers to effortlessly implement push notifications and enhance user engagement. With its intuitive API and comprehensive features, Easy FCM empowers developers to focus on delivering engaging content to their users rather than dealing with complex FCM setup.
 
