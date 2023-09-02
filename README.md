@@ -1,4 +1,4 @@
-# Easy Translation Android Library
+# Easy Translator
 
 Easily integrate translation features into your Android projects with the Easy Translation library. This Kotlin-based library simplifies the translation process, allowing developers to seamlessly add multilingual support to their apps.
 
