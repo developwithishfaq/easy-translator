@@ -2,6 +2,8 @@
 
 Easily integrate translation features into your Android projects with the Easy Translation library. This Kotlin-based library simplifies the translation process, allowing developers to seamlessly add multilingual support to their apps.
 
+**Support All Languages Translation Available On Google Translator**
+
 ## Features
 
 - **Simple API**: Just call the library and provide the text you want to translate, along with the source and target languages.
@@ -12,19 +14,44 @@ Easily integrate translation features into your Android projects with the Easy T
 ## Usage
 
 1. Add the Easy Translation library to your project.
-2. Initialize it with your API key (if required).
-3. Call the translation function, providing the text, source language, and target language.
-4. Handle the success and error callbacks as needed.
-
-For detailed usage instructions and code examples, please refer to the [documentation](#link-to-documentation).
+2. Call the translation function, providing the text, source language, and target language.
+3. Handle the success and error callbacks as needed.
 
 ## Getting Started
 
 To get started with Easy Translation in your Android project, follow these steps:
 
-1. **Installation**:
-
-   Add the Easy Translation library to your project by including it in your Gradle dependencies.
+   > Add the Easy Translation library to your project by including it in your Gradle dependencies.
 
    ```gradle
-   implementation 'com.example:easy-translation:1.0.0'
+   implementation 'com.github.developwithishfaq:easy-translator:latest_version'
+   ```
+   > Create Instance of Easy Translator
+   ```
+   val translator = EasyTranslator(mContext)
+   ```
+   > Call translate function
+   - Provide text you want to translate
+   - Provide Source Language Model or Short code like "auto"
+   - Provide Target Language Model or Short code like "en"
+   - Get results through callback same for errors handling
+   ```
+         translator.translate(
+            text = "text", 
+            fromLang = LanguagesModel.AUTO_DETECT,
+            toLang = LanguagesModel.ENGLISH,
+            { result ->
+
+            },
+            { error ->
+
+            })
+   ```
+## Extras
+
+It contains all languages list so you can easy get that list by calling:
+```
+translator.getLanguagesList()
+```
+
+**Happy Coding**
