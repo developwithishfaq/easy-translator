@@ -1,55 +1,30 @@
-# Easy Translator
+# Easy Translation Android Library
 
-Easy FCM is a powerful and user-friendly library designed to streamline the process of integrating Firebase Cloud Messaging (FCM) into your projects, enabling developers to effortlessly implement push notifications and enhance user engagement. With its intuitive API and comprehensive features, Easy FCM empowers developers to focus on delivering engaging content to their users rather than dealing with complex FCM setup.
+Easily integrate translation features into your Android projects with the Easy Translation library. This Kotlin-based library simplifies the translation process, allowing developers to seamlessly add multilingual support to their apps.
 
 ## Features
 
-- **Simplified Integration**: Easy FCM takes care of the intricate FCM setup, allowing you to quickly implement push notifications without the hassle.
-
-- **Intuitive API**: With an intuitive and straightforward API, Easy FCM lets you send push notifications seamlessly.
-
-- **Topics And Tokens**: Effortlessly manages to push notifications on topics/tokens.
-
-
-
-> Step 1: Add it to your build.gradle (project):
-```gradle
-allprojects {
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
-}
-```
-> Step 2: Add it to your build.gradle (app)
-
-```gradle
-dependencies {
-     implementation 'com.github.developwithishfaq:easy-fcm:latest_version'
-}
-```
+- **Simple API**: Just call the library and provide the text you want to translate, along with the source and target languages.
+- **Callbacks**: Receive callbacks for successful translations and error handling.
+- **Developer-Friendly**: Designed with ease of use in mind, making it accessible to both experienced and beginner developers.
+- **Customizable**: Tailor the translation process to your app's specific needs.
 
 ## Usage
 
-> First Step:
-**Create Instance**
-- Get server key from firebase console
-- For **setTokenOrTopic()** in value section provide token of a device or a topic name, change **isTopic** value accordingly
-- In **setNotificationData()** Provide model **NotificationData()** containing title and body of a notification
-- Finally Build It
+1. Add the Easy Translation library to your project.
+2. Initialize it with your API key (if required).
+3. Call the translation function, providing the text, source language, and target language.
+4. Handle the success and error callbacks as needed.
 
-```
-val helper = FcmPushHelper.Builder()
-            .setServerKey(SERVER_KEY)
-            .setTokenOrTopic(value = TOKEN_OR_TOPIC, isTopic = false)
-            .setNotificationData(notification = NotificationData(TITLE, BODY))
-            .build()
-```
-> Last Step:
-Using that instance call **pushNotification()** function
-```
-helper.pushNotification(onSuccess = {
-            Log.d(TAG, "onSuccess: ")
-        }, onError = {
-            Log.d(TAG, "onError: ")
-        })
-``` 
+For detailed usage instructions and code examples, please refer to the [documentation](#link-to-documentation).
+
+## Getting Started
+
+To get started with Easy Translation in your Android project, follow these steps:
+
+1. **Installation**:
+
+   Add the Easy Translation library to your project by including it in your Gradle dependencies.
+
+   ```gradle
+   implementation 'com.example:easy-translation:1.0.0'
