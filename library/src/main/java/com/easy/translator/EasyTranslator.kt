@@ -32,8 +32,8 @@ class EasyTranslator constructor(
         text: String,
         fromLanguageShortCode: String,
         toLanguageShortCode: String,
-        onSuccess: (String) -> Unit,
-        onError: (String) -> Unit,
+        onSuccess: ((String) -> Unit)? = null,
+        onError: ((String) -> Unit)? = null,
         timeout: Long = 20000
     ) {
         this.text = text
@@ -51,8 +51,8 @@ class EasyTranslator constructor(
         text: String,
         fromLang: LanguagesModel,
         toLang: LanguagesModel,
-        onSuccess: (String) -> Unit,
-        onError: (String) -> Unit,
+        onSuccess: ((String) -> Unit)? = null,
+        onError: ((String) -> Unit)? = null,
         timeout: Long = 20000
     ) {
         this.text = text
@@ -69,8 +69,8 @@ class EasyTranslator constructor(
         text: String,
         fromLang: LanguagesModel,
         toLanguageShortCode: String,
-        onSuccess: (String) -> Unit,
-        onError: (String) -> Unit,
+        onSuccess: ((String) -> Unit)? = null,
+        onError: ((String) -> Unit)? = null,
         timeout: Long = 20000
     ) {
         this.text = text
@@ -86,8 +86,8 @@ class EasyTranslator constructor(
         text: String,
         fromLanguageShortCode: String,
         toLang: LanguagesModel,
-        onSuccess: (String) -> Unit,
-        onError: (String) -> Unit,
+        onSuccess: ((String) -> Unit)? = null,
+        onError: ((String) -> Unit)? = null,
         timeout: Long = 20000
     ) {
         this.text = text
