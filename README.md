@@ -21,6 +21,11 @@ Easily integrate translation features into your Android projects with the Easy T
 
 To get started with Easy Translation in your Android project, follow these steps:
 
+   > Add to setting.gradle
+   ```
+maven { url 'https://jitpack.io' }
+  ```
+   
    > Add the Easy Translation library to your project by including it in your Gradle dependencies.
 
    ```gradle
